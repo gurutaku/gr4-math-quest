@@ -13,7 +13,7 @@
     </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Grade 4 Math Quest with Professor Whiskers</title>
+    <title>Grade 4 Halloween Math Quest with Professor Whiskers</title>
 
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -34,8 +34,157 @@
 
         body {
             font-family: 'Fredoka', 'Nunito', sans-serif;
-            background: linear-gradient(135deg, #e0f2fe 0%, #fef3c7 50%, #fbcfe8 100%);
+            background:
+                radial-gradient(ellipse at 8% 8%, #512b72 0, transparent 36%),
+                radial-gradient(ellipse at 94% 90%, #8c3d2b 0, transparent 32%),
+                linear-gradient(145deg, #170f2b 0%, #29163d 55%, #421d3d 100%);
             min-height: 100vh;
+        }
+
+        .halloween-theme header,
+        .halloween-theme #mascot-card,
+        .halloween-theme #mode-select-screen,
+        .halloween-theme #game-play-screen,
+        .halloween-theme #chest-modal > div,
+        .halloween-theme #speed-results-modal > div {
+            color: #fff7e8;
+            background-color: #241831;
+            border-color: #79528f;
+        }
+
+        .halloween-theme header h1,
+        .halloween-theme #mode-select-screen h2,
+        .halloween-theme #mode-indicator,
+        .halloween-theme #question-text {
+            color: #fff3d8;
+        }
+
+        .halloween-theme header p,
+        .halloween-theme #mode-select-screen > div > p,
+        .halloween-theme footer p {
+            color: #d8b7ec;
+        }
+
+        .halloween-theme header > div:nth-child(2) {
+            background-color: #392747;
+            border-color: #604777;
+        }
+
+        .halloween-theme header > div:last-child > div {
+            background-color: #493052;
+            color: #ffe2a6;
+        }
+
+        .halloween-theme header > div:last-child button {
+            background-color: #392747;
+            color: #f4e7ff;
+        }
+
+        .halloween-theme #mascot-card {
+            border-color: #a56bba;
+        }
+
+        .halloween-theme #cat-wrapper {
+            background-color: #3b2752;
+        }
+
+        .halloween-theme #cat-speech,
+        .halloween-theme #answer-box {
+            color: #fff5df;
+            background-color: #372344;
+            border-color: #d18a36;
+        }
+
+        .halloween-theme #diff-easy-btn.bg-amber-500,
+        .halloween-theme #diff-normal-btn.bg-purple-600 {
+            background-color: #7c3aed;
+        }
+
+        .halloween-theme #diff-easy-btn:not(.bg-amber-500),
+        .halloween-theme #diff-normal-btn:not(.bg-purple-600) {
+            color: #e6d3f2;
+        }
+
+        .halloween-theme #stars-display,
+        .halloween-theme #score-display {
+            background-color: #3b2752;
+            color: #ffe2a6;
+        }
+
+        .halloween-theme #streak-badge,
+        .halloween-theme #timer-badge {
+            background-color: #49263d;
+            border-color: #9b4d6a;
+            color: #ffd2a8;
+        }
+
+        .halloween-theme #mode-select-screen button[onclick^="startTopicQuest"],
+        .halloween-theme #mode-select-screen button[onclick="startSpeedRun"],
+        .halloween-theme #game-play-screen button[onclick="submitAnswer()"],
+        .halloween-theme #chest-modal button,
+        .halloween-theme #speed-results-modal button {
+            background-image: linear-gradient(115deg, #7c3aed, #5b21b6);
+        }
+
+        .halloween-theme #game-play-screen .bg-slate-50 {
+            background-color: #30223e;
+            border-color: #644d75;
+        }
+
+        .halloween-theme #game-play-screen button[onclick^="pressNum"] {
+            color: #f7edff;
+            background-color: #392c49;
+            border-color: #655075;
+        }
+
+        .halloween-theme #game-play-screen button[onclick="pressClear()"] {
+            color: #ffe0e5;
+            background-color: #6b2d42;
+            border-color: #a84c61;
+        }
+
+        .halloween-theme #game-play-screen button[onclick="pressBackspace()"] {
+            color: #fff0d0;
+            background-color: #62401f;
+            border-color: #a8712c;
+        }
+
+        .halloween-theme #game-play-screen button[onclick="returnToMenu()"] {
+            color: #f7eaff;
+            background-color: #392747;
+        }
+
+        .halloween-theme #mode-indicator,
+        .halloween-theme #timer-badge {
+            background-color: #49263d;
+            color: #ffd2a8;
+        }
+
+        .halloween-theme #streak-progress-bar + span,
+        .halloween-theme #mode-select-screen > div:last-child {
+            color: #d8c4e2;
+            border-color: #604777;
+        }
+
+        .halloween-theme #streak-progress-bar {
+            background-image: linear-gradient(90deg, #7c3aed, #f97316);
+        }
+
+        .halloween-theme #chest-modal > div > div.bg-amber-50,
+        .halloween-theme #speed-results-modal > div > div.bg-red-50 {
+            background-color: #372344;
+            border-color: #79528f;
+            color: #fff0d8;
+        }
+
+        .halloween-theme #chest-modal h3,
+        .halloween-theme #speed-results-modal h3 {
+            color: #ffbf66;
+        }
+
+        .halloween-theme #chest-modal p,
+        .halloween-theme #speed-results-modal p {
+            color: #d8c4e2;
         }
 
         /* Mascot emotional keyframes */
@@ -119,7 +268,7 @@
     </style>
 </head>
 
-<body class="flex flex-col items-center justify-between p-3 sm:p-5 min-h-screen">
+<body class="halloween-theme flex flex-col items-center justify-between p-3 sm:p-5 min-h-screen">
 
     <div class="w-full max-w-2xl mx-auto flex-grow flex flex-col justify-between">
 
@@ -129,11 +278,11 @@
             <div class="flex items-center gap-2.5">
                 <div
                     class="bg-gradient-to-tr from-amber-400 to-orange-500 text-white w-10 h-10 sm:w-12 sm:h-12 rounded-2xl flex items-center justify-center text-xl sm:text-2xl shadow-sm">
-                    <i class="fa-solid fa-graduation-cap"></i>
+                    🎃
                 </div>
                 <div>
                     <h1 class="text-base sm:text-xl font-extrabold text-gray-800 leading-tight">Grade 4 Math Quest</h1>
-                    <p class="text-[11px] sm:text-xs text-amber-600 font-bold">Prof. Whiskers Math Academy</p>
+                    <p class="text-[11px] sm:text-xs text-amber-600 font-bold">Prof. Whiskers' Spooky Math Academy</p>
                 </div>
             </div>
 
@@ -215,6 +364,14 @@
                     <line x1="19" y1="64" x2="30" y2="62" stroke="#1f2937" stroke-width="1.5" stroke-linecap="round" />
                     <line x1="69" y1="58" x2="80" y2="58" stroke="#1f2937" stroke-width="1.5" stroke-linecap="round" />
                     <line x1="70" y1="62" x2="81" y2="64" stroke="#1f2937" stroke-width="1.5" stroke-linecap="round" />
+
+                    <!-- Wizard hat -->
+                    <path d="M 27 35 Q 39 30 49 4 Q 55 23 73 35 Z" fill="#6d28d9" stroke="#3b176f"
+                        stroke-width="2" stroke-linejoin="round" />
+                    <path d="M 34 29 Q 49 34 66 29 L 71 35 Q 49 40 29 35 Z" fill="#f97316" />
+                    <ellipse cx="50" cy="36" rx="28" ry="5" fill="#3b176f" />
+                    <path d="M 51 12 L 53 17 L 58 17 L 54 20 L 56 25 L 51 22 L 47 25 L 48 20 L 44 17 L 49 17 Z"
+                        fill="#fbbf24" />
                 </svg>
             </div>
 
