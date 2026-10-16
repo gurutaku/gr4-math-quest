@@ -41,6 +41,53 @@
             min-height: 100vh;
         }
 
+        .games-hub-link {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 7px;
+            padding: 9px 14px;
+            border: 1px solid #f2c9dd;
+            border-radius: 999px;
+            background: linear-gradient(135deg, #fff5cf, #ffe8f1);
+            box-shadow: 0 3px 0 #ecc8dc;
+            color: #694978;
+            font-family: ui-rounded, system-ui, sans-serif;
+            font-size: 14px;
+            font-weight: 850;
+            line-height: 1.2;
+            text-decoration: none;
+            white-space: nowrap;
+            transition: transform .12s, box-shadow .12s;
+            flex: none;
+        }
+
+        .games-hub-link:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 4px 0 #ecc8dc;
+        }
+
+        .games-hub-link:focus-visible {
+            outline: 3px solid #ffb84d;
+            outline-offset: 3px;
+        }
+
+        @media (max-width: 420px) {
+            .games-hub-link {
+                padding: 9px 11px;
+            }
+
+            .games-hub-label {
+                display: none;
+            }
+        }
+
+        @media (max-width: 360px) {
+            .games-hub-link {
+                padding: 7px 9px;
+            }
+        }
+
         .halloween-theme header,
         .halloween-theme #mascot-card,
         .halloween-theme #mode-select-screen,
@@ -299,7 +346,7 @@
             </div>
 
             <!-- Stats & Sound Toggle -->
-            <div class="flex items-center gap-2">
+            <div class="flex items-center gap-2 flex-wrap justify-end ml-auto">
                 <div
                     class="bg-amber-100 text-amber-800 px-2.5 py-1 rounded-xl text-xs font-extrabold flex items-center gap-1 shadow-sm">
                     <i class="fa-solid fa-star text-amber-500"></i>
@@ -314,6 +361,9 @@
                     class="w-8 h-8 sm:w-9 sm:h-9 bg-slate-100 hover:bg-slate-200 text-slate-700 rounded-xl flex items-center justify-center text-xs font-bold transition-all shadow-sm">
                     <i id="mute-icon" class="fa-solid fa-volume-high"></i>
                 </button>
+                <a class="games-hub-link" href="https://gurutaku.ca/coolgames/"
+                    aria-label="Back to Gurutaku Cool Games" title="Back to Gurutaku Cool Games"><span
+                        aria-hidden="true">🎮</span><span class="games-hub-label">More Games</span></a>
             </div>
         </header>
 
